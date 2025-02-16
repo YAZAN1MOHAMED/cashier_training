@@ -1,0 +1,43 @@
+:root {
+    font-family: "Itim", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.title {
+    text-align: center;
+}
+
+.challenge {
+    text-align: center;
+    width: 40%;
+    margin: 20% auto;
+    background-color: #d5d5d5;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 1.5em;
+}
+
+.question {}
+
+.bill-value {
+    color: rgb(19, 177, 19);
+    font-size: 1.6em;
+}
+
+.customer-pay-value {
+    color: rgb(236, 25, 25);
+    font-size: 1.6em;
+
+}
+
+.change-value-input {
+    max-width: 90%;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.submit-button {
+    margin-top: 10px;
+
+}
