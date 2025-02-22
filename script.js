@@ -19,3 +19,14 @@ changeQuestion(billValue, amountPaid);
 
 // End Random Generation Section.
 
+// Start calculation Section
+const wrongAnswer=()=>{
+
+}
+const correctAnswer=()=>{
+
+}
+const checkAnswer = (billValue,amountPaid,inputValue)=>{
+const isAnswerTrue = amountPaid - billValue == inputValue;
+// Not complete yet
+}
