@@ -9,6 +9,9 @@
 }
 
 .challenge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     width: 40%;
     margin: 20% auto;
@@ -35,9 +38,18 @@
     max-width: 90%;
     font-size: 1.5em;
     text-align: center;
+    border: 1px black solid;
+    border-radius: 15px;
 }
 
 .submit-button {
+    background-color: #ffe6ba;
+    border-radius: 15px;
     margin-top: 10px;
+    transition: 0.3s;
+}
 
+.submit-button:hover {
+    background-color: hsl(38, 100%, 70%);
+    cursor: pointer;
 }
