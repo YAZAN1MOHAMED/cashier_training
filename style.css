@@ -14,7 +14,7 @@
     align-items: center;
     text-align: center;
     width: 40%;
-    margin: 20% auto;
+    margin: 40px auto;
     background-color: #d5d5d5;
     padding: 10px;
     border-radius: 20px;
@@ -52,4 +52,8 @@
 .submit-button:hover {
     background-color: hsl(38, 100%, 70%);
     cursor: pointer;
+}
+.challenge-answer{
+    font-size: 2em;
+    text-align: center;
 }
