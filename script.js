@@ -1,6 +1,11 @@
 
 const billValue = document.querySelector('.bill-value')
 const amountPaid = document.querySelector('.amount-paid')
+const answerInput = document.querySelector('.answer-input')
+const submitButton = document.querySelector('.submit-button')
+const answerForm =  document.querySelector('#answer-form')
+
+
 //Start Random Generation Section
 
 const getRandomInt = (min, max) => {
@@ -20,13 +25,21 @@ changeQuestion(billValue, amountPaid);
 // End Random Generation Section.
 
 // Start calculation Section
-const wrongAnswer=()=>{
+answerForm.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    checkAnswer(billValue.innerHTML,amountPaid.innerHTML,answerInput.value)})
 
+const wrongAnswer=()=>{
+    const message = document.querySelector('.wrongAnswer')
 }
 const correctAnswer=()=>{
-
+    const correctAnswer = document.querySelector('.correctAnswer')
+    correctAnswer.classList.remove('hide');
 }
 const checkAnswer = (billValue,amountPaid,inputValue)=>{
 const isAnswerTrue = amountPaid - billValue == inputValue;
-// Not complete yet
+
+if (isAnswerTrue) {
+    correctAnswer()
+}
 }
