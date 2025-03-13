@@ -12,13 +12,13 @@ const getRandomInt = (min, max) => {
     const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
     return randomNumber;
 }
-const changeQuestion = (billValue, amountPaid) => {
+const changeQuestion = (billValueElement, amountPaidElement) => {
 
     const randomBillValue = getRandomInt(1, 10_000)
     const randomAmountPaid = getRandomInt(randomBillValue, randomBillValue + 1_000)
 
-    billValue.innerHTML = randomBillValue;
-    amountPaid.innerHTML = randomAmountPaid;
+    billValueElement.innerHTML = randomBillValue;
+    amountPaidElement.innerHTML = randomAmountPaid;
 }
 changeQuestion(billValue, amountPaid);
 
@@ -27,7 +27,7 @@ changeQuestion(billValue, amountPaid);
 // Start calculation Section
 answerForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    checkAnswer(billValue.innerHTML, amountPaid.innerHTML, answerInput.value)
+    checkAnswer(billValue, amountPaid, answerInput.value)
 })
 
 const wrongAnswer = (correctValue) => {
@@ -44,11 +44,12 @@ const correctAnswer = () => {
     wrongAnswer.classList.add('hide')
     correctAnswer.classList.remove('hide');
 }
-const checkAnswer = (billValue, amountPaid, inputValue) => {
-    const change = amountPaid - billValue;
+const checkAnswer = (billValueElement, amountPaidElement, inputValue) => {
+    const change = amountPaidElement.innerHTML - billValueElement.innerHTML;
     const isAnswerTrue = change == inputValue;
     if (isAnswerTrue) {
         correctAnswer()
     }
-    else wrongAnswer(change)
+    else wrongAnswer(change);
+    changeQuestion(billValueElement, amountPaidElement)
 }
