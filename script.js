@@ -2,6 +2,7 @@
 let highScore = 0;
 let currentScore = 0;
 const highScoreElement = document.querySelector('.high-score')
+const currentScoreElement = document.querySelector('.current-score')
 const billValue = document.querySelector('.bill-value')
 const amountPaid = document.querySelector('.amount-paid')
 const answerInput = document.querySelector('.answer-input')
@@ -59,12 +60,15 @@ const checkAnswer = (billValueElement, amountPaidElement, inputValue) => {
     if (isAnswerTrue) {
         correctAnswer();
         currentScore++;
+        currentScoreElement.innerHTML = currentScore;
         checkHighScore(highScore, currentScore) ? highScoreElement.innerHTML = highScore : null;
 
     }
     else {
         wrongAnswer(change);
         currentScore = 0;
+        currentScoreElement.innerHTML = currentScore;
+
     }
     changeQuestion(billValueElement, amountPaidElement)
 }

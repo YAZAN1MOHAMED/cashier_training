@@ -16,7 +16,7 @@ body{
     font-size: 1.5em;
 }
 
-.high-score {
+.high-score, .current-score {
     color: rgb(19, 177, 19);
 }
 
