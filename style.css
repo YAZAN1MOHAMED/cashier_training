@@ -4,8 +4,20 @@
     font-style: normal;
 }
 
+body{
+    background-color: hsl(0, 0%, 97%);
+}
 .title {
     text-align: center;
+}
+
+.score-check {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.high-score {
+    color: rgb(19, 177, 19);
 }
 
 .challenge {
@@ -68,12 +80,12 @@
 }
 
 .challenge-answer-response p.hide {
-opacity: 0;
+    opacity: 0;
     transition: all 0.3s;
 }
 
 .challenge-answer-response p {
     transition: all 0.3s;
     opacity: 1;
-    
+
 }

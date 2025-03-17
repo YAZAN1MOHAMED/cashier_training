@@ -15,6 +15,9 @@
   </head>
   <body>
     <h1 class="title">Cashier training</h1>
+    <p class="score-check">
+      current high score: <span class="high-score">0</span>
+    </p>
     <section class="challenge">
       <p class="question">
         The bill is <span class="bill-value">90$</span> The customer pays
@@ -22,18 +25,14 @@
         What is the change?
       </p>
       <form id="answer-form" class="answer-form">
-      <input type="number" min="0" name="change" class="answer-input" />
-      <button class="submit-button">Submit</button>
-    </form>
+        <input type="number" min="0" name="change" class="answer-input" />
+        <button class="submit-button">Submit</button>
+      </form>
     </section>
     <section class="challenge-answer-response">
-      <p class="correct-answer hide">
-        The answer is Correct! ✅
-      </p>
+      <p class="correct-answer hide">The answer is Correct! ✅</p>
 
-      <p class="wrong-answer hide">
-        The answer is False ❌
-      </p>
+      <p class="wrong-answer hide">The answer is False ❌</p>
     </section>
   </body>
   <script src="script.js"></script>

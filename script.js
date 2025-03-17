@@ -1,11 +1,20 @@
 
+let highScore = 0;
+let currentScore = 0;
+const highScoreElement = document.querySelector('.high-score')
 const billValue = document.querySelector('.bill-value')
 const amountPaid = document.querySelector('.amount-paid')
 const answerInput = document.querySelector('.answer-input')
 const submitButton = document.querySelector('.submit-button')
 const answerForm = document.querySelector('#answer-form')
-
-
+// high score check function
+const checkHighScore = (HighScore, currentScore) => {
+    if (HighScore < currentScore) {
+        highScore = currentScore;
+        return true;
+    }
+    return false;
+}
 //Start Random Generation Section
 
 const getRandomInt = (min, max) => {
@@ -48,8 +57,14 @@ const checkAnswer = (billValueElement, amountPaidElement, inputValue) => {
     const change = amountPaidElement.innerHTML - billValueElement.innerHTML;
     const isAnswerTrue = change == inputValue;
     if (isAnswerTrue) {
-        correctAnswer()
+        correctAnswer();
+        currentScore++;
+        checkHighScore(highScore, currentScore) ? highScoreElement.innerHTML = highScore : null;
+
     }
-    else wrongAnswer(change);
+    else {
+        wrongAnswer(change);
+        currentScore = 0;
+    }
     changeQuestion(billValueElement, amountPaidElement)
 }
